@@ -2,3 +2,4 @@
 .vscode/
 .keystone/
 node_modules/
+.env
