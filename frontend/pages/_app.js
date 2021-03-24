@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps, apollo }) {
 //   pageProps.query = ctx.query;
 //   return pageProps;
 // };
-
+//
 // export async function getStaticProps(context) {
 //   return {
 //     query: context.query,
