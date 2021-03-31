@@ -27,6 +27,7 @@ const ProductListStyles = styled.div`
 `;
 
 export default function Products() {
+  // TODO make request on server and implement page prerender
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
 
   if (loading) return <p>Loading...</p>;

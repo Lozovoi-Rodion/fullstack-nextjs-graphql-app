@@ -6,6 +6,5 @@ export default function formatMoney(amount = 0) {
   };
 
   const formatter = new Intl.NumberFormat('en-US', options);
-  console.log(amount);
   return formatter.format(amount / 100);
 }
