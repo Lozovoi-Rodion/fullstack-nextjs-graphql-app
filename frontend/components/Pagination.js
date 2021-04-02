@@ -6,7 +6,7 @@ import PaginationStyles from './styles/PaginationStyles';
 import DisplayError from './ErrorMessage';
 import { perPage } from '../config';
 
-const PAGINATION_QUERY = gql`
+export const PAGINATION_QUERY = gql`
   query PAGINATION_QUERY {
     _allProductsMeta {
       count
@@ -33,12 +33,16 @@ export default function Pagination({ page }) {
       <Head>
         <title>Sick Fits - Page {page} of __</title>
       </Head>
-      <Link href={`/products/${page - 1}`}>Prev</Link>
+      <Link href={`/products/${Number(page) - 1}`} passHref>
+        <a aria-disabled={page <= 1}>Prev</a>
+      </Link>
       <p>
         Page {page} of {pageCount}
       </p>
       <p>{count} Items Total</p>
-      <Link href={`/products/${page + 1}`}>Next</Link>
+      <Link href={`/products/${Number(page) + 1}`} passHref>
+        <a aria-disabled={page >= pageCount}> Next</a>
+      </Link>
     </PaginationStyles>
   );
 }
