@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import NavStyles from './styles/NavStyles';
 import { useUser } from './User';
+import SignOut from './SignOut';
 
 const Nav = () => {
   const user = useUser();
-  console.log(user);
+
   return (
     <NavStyles>
       <Link href="/products"> products</Link>
@@ -13,6 +14,7 @@ const Nav = () => {
           <Link href="/sell"> sell</Link>
           <Link href="/orders"> orders</Link>
           <Link href="/account"> account</Link>
+          <SignOut />
         </>
       )}
       {!user && (
