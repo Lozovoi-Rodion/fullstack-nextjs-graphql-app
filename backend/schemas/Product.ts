@@ -2,8 +2,12 @@ import { list } from '@keystone-next/keystone/schema';
 import { text, select, integer, relationship } from '@keystone-next/fields';
 
 export const Product = list({
-  // TODO
-  // access:
+  access: {
+    create: false,
+    read: false,
+    update: false,
+    delete: false,
+  },
   fields: {
     name: text({ isRequired: true }),
     description: text({
