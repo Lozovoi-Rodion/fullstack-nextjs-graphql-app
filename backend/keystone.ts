@@ -81,7 +81,6 @@ export default withAuth(
         !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
-      // GraphQL Query
       User: mockql`
       id 
       name 
